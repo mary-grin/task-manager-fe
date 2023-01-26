@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="form-container">
+    <h2 class="form-title">Create an account</h2>
+    <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <input
+        type="text"
+        placeholder="Email"
+        class="form-input"
+        formControlName="email">
+      <input
+        type="password"
+        placeholder="Password"
+        class="form-input"
+        formControlName="password">
+      <input
+        type="password"
+        placeholder="Type password again"
+        class="form-input"
+        formControlName="confirm">
+      <button
+        class="form-button btn"
+        type="submit"
+        [disabled]="form.invalid">Sign Up</button>
+    </form>
+    <div class="form-separate">
+      <hr class="form-separate_line">
+      <span class="form-separate_title">or</span>
+      <hr class="form-separate_line">
+    </div>
+    <button
+      class="form-button_google btn">Sign up with Google
+      <img src="assets/icons-google.png" alt="Google" class="form-button_google-img">
+    </button>
+    <p class="form-hint">Already have account? <span class="form-hint_link" [routerLink]="['../sign-in']">Sign in</span></p>
+  </div>
+</div>
